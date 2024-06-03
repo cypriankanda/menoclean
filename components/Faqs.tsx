@@ -6,25 +6,26 @@ import toast from "react-hot-toast";
 
 const Faqs2 = () => {
   const [loading, setLoading] = React.useState(false);
+  const sendQuestion = async (data: {}) => {
+    try {
+      setLoading(true);
+      const res = await axios.post("/api/contact", data);
+      setLoading(false);
+      toast.success(`${res.data.message}`);
+    } catch (error) {
+      setLoading(false);
+      toast.error(`Please try again later`);
+    }
+  };
   const handleQuestionSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
     const data = Object.fromEntries(formData);
-    if (loading) {
-      toast.loading("loading...");
+    if (Object.values(data).includes("")) {
+      return toast.error("please fill all the fields");
     }
-    try {
-      setLoading(true);
-      const res = await axios.post("/api/contact", data);
-      console.log(res);
-      setLoading(false);
-      return toast.success(res.data.response.data.message);
-    } catch (error) {
-      setLoading(false);
-      console.log(error);
-      toast.error("please try again later or use other chat options ");
-      return toast.error("we are sorry for the inconvinience");
-    }
+
+    sendQuestion(data);
   };
   return (
     <section id="faqs" className="min-h-svh flex flex-col">
@@ -50,7 +51,7 @@ const Faqs2 = () => {
             type="submit"
             className="p-2 mx-auto col-span-2 w-1/3 rounded-[4px] bg-[#008000] text-white "
           >
-            Send question
+            {`${loading ? "loading..." : "send question"}`}
           </button>
         </form>
       </div>

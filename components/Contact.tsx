@@ -7,6 +7,17 @@ import axios from "axios";
 
 const Contact = () => {
   const [loading, setLoading] = React.useState(false);
+  const sendEmail = async (data: {}) => {
+    try {
+      setLoading(true);
+      const res = await axios.post("/api/contact", data);
+      toast.success(`${res.data.message}`);
+      setLoading(false);
+    } catch (error) {
+      setLoading(false);
+      toast.error(`Please try again later`);
+    }
+  };
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     const formData = new FormData(e.currentTarget);
@@ -15,22 +26,7 @@ const Contact = () => {
     if (Object.values(data).includes("")) {
       return toast.error("please fill all the fields");
     }
-    if (loading) {
-      toast.loading("loading...");
-    }
-
-    try {
-      setLoading(true);
-      const res = await axios.post("/api/contact", data);
-      console.log(res);
-      setLoading(false);
-      return toast.success(res.data.response.data.message);
-    } catch (error) {
-      setLoading(false);
-      console.log(error);
-      toast.error("please try again later or use other chat options ");
-      return toast.error("we are sorry for the inconvinience");
-    }
+    sendEmail(data);
   };
 
   return (
@@ -77,7 +73,7 @@ const Contact = () => {
               className="p-2 bg-[#0060F1] rounded-[4px] hover:-translate-y-1 duration-300 ease-in-out"
               type="submit"
             >
-              Request Service
+              {`${loading ? "loading..." : "request service"}`}
             </button>
           </form>
         </main>

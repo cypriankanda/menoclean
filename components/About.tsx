@@ -36,7 +36,10 @@ const About = () => {
                 <p className="text-black z-50 font-bold">
                   {services[index].service}
                 </p>
-                <Link href={`/${services[index].id}`} className="text-blue-500">
+                <Link
+                  href={`/${services[index].id}`}
+                  className="text-blue-500 hover:underline underline-offset-8"
+                >
                   Learn more
                 </Link>
               </CardContainer>

@@ -43,28 +43,28 @@ export const ImagesSlider = ({
 
   // the side effect.
   useEffect(() => {
-    loadImages();
+    setLoadedImages(images);
   }, []);
 
-  const loadImages = () => {
-    setLoading(true);
-    const loadPromises = images.map((image) => {
-      return new Promise((resolve, reject) => {
-        // @ts-ignores
-        const img = new Image();
-        img.src = image;
-        img.onload = () => resolve(image);
-        img.onerror = reject;
-      });
-    });
+  // const loadImages = () => {
+  //   setLoading(true);
+  //   const loadPromises = images.map((image) => {
+  //     return new Promise((resolve, reject) => {
+  //       // @ts-ignores
+  //       const img = new Image();
+  //       img.src = image;
+  //       img.onload = () => resolve(image);
+  //       img.onerror = reject;
+  //     });
+  //   });
 
-    Promise.all(loadPromises)
-      .then((loadedImages) => {
-        setLoadedImages(loadedImages as string[]);
-        setLoading(false);
-      })
-      .catch((error) => console.error("Failed to load images:", error));
-  };
+  //   Promise.all(loadPromises)
+  //     .then((loadedImages) => {
+  //       setLoadedImages(loadedImages as string[]);
+  //       setLoading(false);
+  //     })
+  //     .catch((error) => console.error("Failed to load images:", error));
+  // };
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === "ArrowRight") {

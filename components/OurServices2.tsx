@@ -33,25 +33,25 @@ const OurServices2 = () => {
       className="min-h-[90svh]  w-full flex flex-col bg-[#008000] items-center justify-center gap-2"
     >
       <h2 className="text-white">Our services</h2>
-      <Link href={`/${service?.id}`}>
-        <img
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          src={service?.image}
-          alt={service?.service}
-          className="md:w-[900px] md:h-[400px] w-[90vw] h-[40vh] rounded-md inset-0 object-cover object-center"
-        />
-      </Link>
+
+      <img
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+        src={service?.image}
+        alt={service?.service}
+        className="md:w-[900px] md:h-[400px] w-[90vw] h-[40vh] rounded-md inset-0 object-cover object-center"
+      />
+
       <div className="flex justify-between md:w-[900px] w-[90vw]">
         <h5 className="text-white capitalize tracking-widest">
           {service?.service}
         </h5>
-        <a
+        <Link
           href={`/${service?.id}`}
           className="text-white text-[14px] underline "
         >
           Learn more
-        </a>
+        </Link>
       </div>
 
       <div className="flex justify-evenly items-center w-1/2 ">
