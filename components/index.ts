@@ -1,0 +1,14 @@
+export { default as Navbar } from "./Navbar";
+export { default as Hero } from "./Hero";
+export { default as Footer } from "./Footer";
+export { default as About } from "./About";
+export { default as Services } from "./OurServices2";
+export { default as ChooseUs } from "./ChooseUs";
+export { default as Testimonials } from "./Testimonials";
+export { default as Contact } from "./Contact";
+export { default as Faqs } from "./Faqs";
+export { default as NavServices } from "./NavBarServices";
+export { default as SideBar } from "./SideBar";
+export { default as MobileLinks } from "./MobileLinks";
+export { default as ServiceDetails } from "./ServiceDetails";
+export { default as Accordion } from "./Accordion";
