@@ -36,13 +36,13 @@ const ServiceDetails = ({ id }: { id: string }) => {
           {service?.description}
         </p>
         <div className=" md:w-2/3 w-full flex p-2 justify-around items-center">
-          <a href={`https://wa.me/${links.email}`} target="_blank">
+          <a href={`https://wa.me/${links.phone}`} target="_blank">
             <FaWhatsapp color="black" size={24} />
           </a>
           <a href={`mailto:${links.email}`} target="_blank">
             <MdOutlineMailOutline color="black" size={24} />
           </a>
-          <a href="tel:+254112797131" target="_blank">
+          <a href={`tel:${links.phone}`} target="_blank">
             <FaPhone color="black" size={24} />
           </a>
         </div>

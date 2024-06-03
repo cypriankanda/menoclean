@@ -49,11 +49,11 @@ const HeroImageSlider = () => {
               Request service
             </button>
           </a>
-          <a href="/video">
+          {/* <a href="/video">
             <button className="p-2 rounded-[4px] hover:bg-[#568AD9] border border-[#0060F1]">
               watch video
             </button>
-          </a>
+          </a> */}
         </div>
       </ImagesSlider>
     </section>

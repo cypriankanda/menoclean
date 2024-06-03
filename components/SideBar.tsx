@@ -25,13 +25,13 @@ const SideBar = () => {
               key={index}
               className="hover:scale-105 duration-300 ease-linear"
             >
-              <Link
+              <a
                 onClick={() => hideSideBar()}
                 href={item.link}
                 className="capitalize text-navclamp text-[16px] cursor-pointer text-[#514B4B] "
               >
                 {item.name}
-              </Link>
+              </a>
             </li>
           );
         })}

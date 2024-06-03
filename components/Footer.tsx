@@ -36,7 +36,7 @@ const Footer = () => {
         <div className="flex flex-col gap-4 text-white -tracking-wide">
           <h3 className="font-black text-xl">Contact</h3>
           <div className="flex justify-start items-center gap-2">
-            <a href="tel:+254112797131">
+            <a href={`tel:${links.phone}`}>
               <FaPhone />
             </a>
             <p className="text-[14px] md:text-[16px]">{links.phone}</p>
