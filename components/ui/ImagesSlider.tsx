@@ -121,7 +121,7 @@ export const ImagesSlider = ({
     },
   };
 
-  const areImagesLoaded = loadedImages.length > 0;
+  const areImagesLoaded = images.length > 0;
 
   return (
     <div

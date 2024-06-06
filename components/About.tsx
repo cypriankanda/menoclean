@@ -1,5 +1,5 @@
 import React from "react";
-import { CardContainer } from "../components/ui/Card";
+import { CardContainer, CardItem } from "../components/ui/Card";
 import { services } from "../utils/utils";
 import Link from "next/link";
 const About = () => {
@@ -36,12 +36,14 @@ const About = () => {
                 <p className="text-black z-50 font-bold">
                   {services[index].service}
                 </p>
-                <Link
-                  href={`/${services[index].id}`}
-                  className="text-blue-500 hover:underline underline-offset-8"
-                >
-                  Learn more
-                </Link>
+                <CardItem>
+                  <Link
+                    href={`/${services[index].id}`}
+                    className="text-blue-500 hover:underline underline-offset-8"
+                  >
+                    Learn more
+                  </Link>
+                </CardItem>
               </CardContainer>
             );
           })}
