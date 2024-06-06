@@ -6,7 +6,6 @@ import { motion } from "framer-motion";
 import React from "react";
 const HeroImageSlider = () => {
   const [currentIndex, setIndex] = React.useState(0);
-
   const animationVariants = {
     initial: { opacity: 0, y: 50 },
     animate: { opacity: 1, y: 0 },
@@ -20,9 +19,10 @@ const HeroImageSlider = () => {
       return setIndex(currentIndex + 1);
     }, 5000);
   }, [currentIndex]);
+  const MemoizedSlider = React.memo(ImagesSlider);
   return (
     <section id="home">
-      <ImagesSlider
+      <MemoizedSlider
         overlay
         className="min-h-[100svh] flex flex-col justify-around text-white"
         images={heroImages}
@@ -45,7 +45,7 @@ const HeroImageSlider = () => {
         <MobileLinks />
         <div className="p-4 z-50 flex gap-2">
           <a href="#contact">
-            <button className="p-2 rounded-[4px] hover:bg-[#568AD9] bg-[#0060F1]">
+            <button className="p-4 rounded-[4px] hover:bg-[#568AD9] bg-[#0060F1]">
               Request service
             </button>
           </a>
@@ -55,7 +55,7 @@ const HeroImageSlider = () => {
             </button>
           </a> */}
         </div>
-      </ImagesSlider>
+      </MemoizedSlider>
     </section>
   );
 };
