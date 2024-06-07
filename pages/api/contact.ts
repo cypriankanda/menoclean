@@ -20,6 +20,7 @@ export default async function handler(
     res.status(400).json({ message: "Please enter a valid email" });
   }
   // create a transporter
+  
   const transporter = nodemailer.createTransport({
     host: "smtpout.secureserver.net",
     secure: true,

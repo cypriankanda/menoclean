@@ -4,6 +4,14 @@ import { FaUserCog } from "react-icons/fa";
 import { FaPuzzlePiece, FaBriefcaseMedical } from "react-icons/fa";
 import { FaRocket } from "react-icons/fa";
 import { MdOutlineVerifiedUser } from "react-icons/md";
+export function formatPhoneNumber(phoneNumber) {
+  const cleaned = ("" + phoneNumber).replace(/\D/g, "");
+  const part1 = cleaned.slice(0, 3);
+  const part2 = cleaned.slice(3, 6);
+  const part3 = cleaned.slice(6);
+
+  return `(${part1}) ${part2}-${part3}`;
+}
 export const navLinks = [
   {
     name: "Home",
@@ -81,8 +89,7 @@ export const services = [
     id: nanoid(),
     icon: "",
     service: "Crime scene cleanup",
-    image:
-      "https://images.unsplash.com/photo-1625449281218-cbb6183f0aec?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+    image: "/crime_scene.jpeg",
     description:
       "In the aftermath of a traumatic event, our expert technicians are equipped to handle the cleanup and decontamination of crime scenes, restoring the affected area to a safe and sanitary condition",
   },

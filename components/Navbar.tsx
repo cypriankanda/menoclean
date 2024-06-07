@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <nav className="flex sticky top-0 bg-white overflow-hidden justify-between items-center z-50 ">
       <a href="#home" className="flex w-[20%]  items-start">
-        <Image alt="Logo" src={Logo} width={80} height={80} />
+        <Image alt="Logo" src={Logo} width={80} height={80} priority />
       </a>
       <ul className="  hidden md:flex-1 md:flex justify-evenly gap-2 items-center p-4 text-[16px]">
         {navLinks.map((link) => {

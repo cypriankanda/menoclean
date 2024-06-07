@@ -20,7 +20,7 @@ const Footer = () => {
           <h3 className="font-black text-xl">Company</h3>
           <p className="text-[14px]">
             <MdLocationCity />
-            120 S 330th St , ste C , Federal Way , WA 98003
+            CR12 location
           </p>
         </div>
         <div className="grid w-full grid-cols-2 gap-4 text-white  tracking-wide">
@@ -67,7 +67,7 @@ const Footer = () => {
         <div className="w-1/3 h-[1px] bg-white"></div>
       </section>
       <p className="text-center text-white">
-        MenoClean Remedial Services. All Rights Reserved
+        MenoClean Remedial Services . All Rights Reserved
       </p>
     </footer>
   );

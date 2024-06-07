@@ -13,7 +13,7 @@ const OurServices2 = () => {
       setServiceIndex((prevIndex) =>
         prevIndex === services.length - 1 ? 0 : prevIndex + 1
       );
-    }, 3000);
+    }, 5000);
     setTimeOutId(id);
   }, []);
 

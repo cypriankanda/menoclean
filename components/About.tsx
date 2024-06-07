@@ -20,33 +20,31 @@ const About = () => {
       </section>
       <h2 className="text-center text-black">Our top services</h2>
       <section className="flex flex-wrap flex-1 items-center justify-around">
-        {Array(3)
-          .fill(0)
-          .map((item, index) => {
-            return (
-              <CardContainer
-                key={index}
-                className={`w-[350px] h-[500px]  flex flex-col`}
-              >
-                <img
-                  src={services[index].image}
-                  alt={services[index].image}
-                  className="w-full h-full inset-0 object-cover object-center rounded-md"
-                />
-                <p className="text-black z-50 font-bold">
-                  {services[index].service}
-                </p>
-                <CardItem>
-                  <Link
-                    href={`/${services[index].id}`}
-                    className="text-blue-500 hover:underline underline-offset-8"
-                  >
-                    Learn more
-                  </Link>
-                </CardItem>
-              </CardContainer>
-            );
-          })}
+        {[...services.slice(0, 3)].map((item, index) => {
+          return (
+            <CardContainer
+              key={index}
+              className={`w-[350px] h-[500px]  flex flex-col`}
+            >
+              <img
+                src={item.image}
+                alt={item.image}
+                className="w-full h-full inset-0 object-cover object-center rounded-md"
+              />
+              <p className="text-black z-50 font-bold">
+                {services[index].service}
+              </p>
+              <CardItem>
+                <Link
+                  href={`/${item.id}`}
+                  className="text-blue-500 hover:underline underline-offset-8"
+                >
+                  Learn more
+                </Link>
+              </CardItem>
+            </CardContainer>
+          );
+        })}
       </section>
     </main>
   );

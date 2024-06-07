@@ -4,7 +4,7 @@ import Image from "next/image";
 import WhatsApp from "../public/whatsapp.png";
 import toast from "react-hot-toast";
 import axios from "axios";
-
+import { formatPhoneNumber } from "../utils/utils";
 const Contact = () => {
   const [loading, setLoading] = React.useState(false);
   const sendEmail = async (data: {}) => {
@@ -84,7 +84,7 @@ const Contact = () => {
           </p>
           <span>
             <a href={`tel:${links.phone}`} className="text-black underline">
-              {links.phone}
+              {formatPhoneNumber(links.phone)}
             </a>
           </span>
           <div className="flex justify-center items-start gap-2 p-2">
