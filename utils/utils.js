@@ -208,7 +208,7 @@ export const WhyChooseUs = [
 
 export const heroText = [
   " Your Partner in Comprehensive Cleanup Solutions",
-  "Since 1990s offering quality and affordable clean up solutions ",
+  "offering quality and affordable clean up solutions ",
   "Get started today to receive the kind of service you been looking for",
 ];
 export const heroImages = [
