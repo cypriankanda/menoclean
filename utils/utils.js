@@ -6,11 +6,12 @@ import { FaRocket } from "react-icons/fa";
 import { MdOutlineVerifiedUser } from "react-icons/md";
 export function formatPhoneNumber(phoneNumber) {
   const cleaned = ("" + phoneNumber).replace(/\D/g, "");
-  const part1 = cleaned.slice(0, 3);
-  const part2 = cleaned.slice(3, 6);
-  const part3 = cleaned.slice(6);
+  const code = cleaned.slice(0, 1);
+  const part1 = cleaned.slice(1, 4);
+  const part2 = cleaned.slice(4, 7);
+  const part3 = cleaned.slice(7);
 
-  return `(${part1}) ${part2}-${part3}`;
+  return `+${code} (${part1}) ${part2}-${part3}`;
 }
 export const navLinks = [
   {
@@ -220,7 +221,6 @@ export const heroImages = [
   "/heo_suited.jpg",
   "/chemicalSpill.jpg",
   "https://images.unsplash.com/photo-1708534925926-0b85747ba69e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTE0fHxjcmltZSUyMHNjZW5lfGVufDB8fDB8fHww",
-  // "/heroImageTest.jpg",
 ];
 
 export const testimonials = [

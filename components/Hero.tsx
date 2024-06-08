@@ -19,10 +19,10 @@ const HeroImageSlider = () => {
       return setIndex(currentIndex + 1);
     }, 5000);
   }, [currentIndex]);
-  const MemoizedSlider = React.memo(ImagesSlider);
+
   return (
     <section id="home">
-      <MemoizedSlider
+      <ImagesSlider
         overlay
         className="min-h-[100svh] flex flex-col justify-around text-white"
         images={heroImages}
@@ -55,7 +55,7 @@ const HeroImageSlider = () => {
             </button>
           </a> */}
         </div>
-      </MemoizedSlider>
+      </ImagesSlider>
     </section>
   );
 };

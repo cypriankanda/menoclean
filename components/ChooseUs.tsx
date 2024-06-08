@@ -11,7 +11,7 @@ const ChooseUs = () => {
         return setReason(0);
       }
       return setReason(reason + 1);
-    }, 3000);
+    }, 6000);
     setTimeOutId(timeOutId);
   };
   const reasonFound = WhyChooseUs.find((_, index) => index === reason);

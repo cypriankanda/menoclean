@@ -1,5 +1,5 @@
 "use client";
-import { links, navLinks } from "../utils/utils";
+import { links, navLinks, formatPhoneNumber } from "../utils/utils";
 import Image from "next/image";
 import Logo from "../public/logo.png";
 import { FaBars } from "react-icons/fa6";
@@ -7,7 +7,10 @@ import { FaWhatsapp } from "react-icons/fa";
 import { MdOutlineMailOutline } from "react-icons/md";
 import { FaPhone } from "react-icons/fa";
 import { useGlobalContext } from "../context/AppContext";
+import { useRef } from "react";
+
 const Navbar = () => {
+  const modalRef = useRef<HTMLDialogElement>(null);
   const { showSideBar, showNavBarMenu, hideNavBarMenu } = useGlobalContext();
   const handleMouseLeave = (e: React.MouseEvent<HTMLAnchorElement>) => {
     const { clientX } = e;
@@ -60,10 +63,25 @@ const Navbar = () => {
             className="hover:scale-105"
           />
         </a>
-        <a href={`tel:${links.phone}`}>
-          <FaPhone color="#008000" size={24} className="hover:scale-105" />
-        </a>
+
+        <FaPhone
+          id="phone"
+          onClick={() => modalRef.current?.showModal()}
+          color="#008000"
+          size={24}
+          className="hover:scale-105 cursor-pointer"
+        />
       </div>
+      <dialog
+        className="p-1"
+        ref={modalRef}
+        onClick={() => modalRef.current?.close()}
+      >
+        <p className="text-[24px] font-bold">
+          {formatPhoneNumber(links.phone)}
+        </p>
+      </dialog>
+
       <div className="md:hidden w-[40px] flex justify-center items-center h-[40px] bg-[#CFEFCF] rounded-full m-2">
         <FaBars
           color="#008000"
