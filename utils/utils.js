@@ -140,8 +140,7 @@ export const services = [
     id: nanoid(),
     icon: "",
     service: "Unattended death cleanup",
-    image:
-      "https://images.unsplash.com/photo-1601971528243-1f4e8ac0efc3?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTF8fHVuYXR0ZW5kZWQlMjBkZWF0aHxlbnwwfHwwfHx8MA%3D%3D",
+    image: "/unattended.png",
     description:
       "Our unattended death cleanup service addresses the sensitive and challenging task of cleaning and sanitizing spaces where unattended deaths have occurred. Our compassionate and experienced team understands the emotional and logistical complexities involved in these situations. We handle biohazardous materials with care, restore the affected area to a safe condition, and work discreetly to respect the privacy of our clients and their families during this difficult time",
   },
