@@ -1,6 +1,11 @@
 "use client";
 import { MdOutlineMailOutline, MdLocationCity } from "react-icons/md";
-import { footerLinks, links, services } from "../utils/utils";
+import {
+  footerLinks,
+  links,
+  services,
+  formatPhoneNumber,
+} from "../utils/utils";
 import { FaPhone, FaWhatsapp } from "react-icons/fa";
 import Image from "next/image";
 const Footer = () => {
@@ -20,7 +25,7 @@ const Footer = () => {
           <h3 className="font-black text-xl">Company</h3>
           <p className="text-[14px]">
             <MdLocationCity />
-            CR12 location
+            Seattle , Western Washington,Eastern Washington , Portland Oregon
           </p>
         </div>
         <div className="grid w-full grid-cols-2 gap-4 text-white  tracking-wide">
@@ -39,7 +44,9 @@ const Footer = () => {
             <a href={`tel:${links.phone}`}>
               <FaPhone />
             </a>
-            <p className="text-[14px] md:text-[16px]">{links.phone}</p>
+            <p className="text-[14px] md:text-[16px]">
+              {formatPhoneNumber(links.phone)}
+            </p>
           </div>
           <div className="flex justify-start items-center gap-2">
             <a href={`https://wa.me/${links.phone}`}>
