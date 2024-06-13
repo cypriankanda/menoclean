@@ -19,7 +19,6 @@ const HeroImageSlider = () => {
       return setIndex(currentIndex + 1);
     }, 5000);
   }, [currentIndex]);
-
   return (
     <section id="home">
       <ImagesSlider
